@@ -36,7 +36,7 @@ def earthquake_by_id(id):
 
 @app.route('/earthquakes/magnitude/<float:magnitude>')
 def earthquake_by_magnitude(magnitude):
-    earthquakes = []  # array to store a dictionary for each pet
+    earthquakes = []  
     for earthquake in Earthquake.query.filter(Earthquake.magnitude >= magnitude).all():
         earthquakes.append(earthquake.to_dict())
     body = {'count': len(earthquakes),
